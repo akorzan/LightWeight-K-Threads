@@ -1,0 +1,26 @@
+Anthony Korzan
+December 14, 2013
+
+All functionality for lwt_cgrp was implemented.  Certain features such as directed yeilds were
+removed for part 3.
+
+Garabage collection for threads flaged with LWT_NO_JOIN occurs
+during lwt_die.
+
+Kthd used to communicated between each other works but is not synchronized (bad).
+
+Full Kthd functionality is broken.  I seem to be overwriting
+some malloc specific memory as I segfault on malloc when I try to run test_multisend
+from my kthread. Hence the following debug from Valgrind.
+==20605== Process terminating with default action of signal 11 (SIGSEGV)
+==20605==  Bad permissions for mapped region at address 0x41EEA54
+==20605==    at 0x804B11A: test_multisend (lwt_chan.h:32)
+
+To compile:
+make
+
+To run:
+./main
+
+To clean:
+make clean
