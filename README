@@ -7,7 +7,7 @@ removed for part 3.
 Garabage collection for threads flaged with LWT_NO_JOIN occurs
 during lwt_die.
 
-Kthd used to communicated between each other works but is not synchronized (bad).
+Kthd used to communicate between each other works but is not synchronized (bad).
 
 Full Kthd functionality is broken.  I seem to be overwriting
 some malloc specific memory as I segfault on malloc when I try to run test_multisend
